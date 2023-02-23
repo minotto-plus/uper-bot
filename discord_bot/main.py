@@ -41,7 +41,7 @@ async def on_message(message):
         "pﾌｩﾝｴｪｪﾝ!",
         "腐",
     ]
-    uperrundom = random.uniform(0, 8)
+    uperrundom = random.randint(0, 8)
     print(uperrundom)
     await message.channel.send(uper[uperrundom])
 
