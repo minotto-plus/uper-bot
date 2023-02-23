@@ -41,7 +41,6 @@ async def on_message(message):
         "pﾌｩﾝｴｪｪﾝ!",
         "腐",
     ]
-    print(uper)
     await message.channel.send(random.choices(uper, k=1))
 
 
