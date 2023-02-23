@@ -42,6 +42,7 @@ async def on_message(message):
         "腐",
     ]
     uperrundom = random.choices(uper, k=1)
+    print(uperrundom)
     await message.channel.send(uperrundom)
 
 
