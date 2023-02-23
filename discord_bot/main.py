@@ -1,4 +1,7 @@
 # インストールした discord.py を読み込む
+# ランダムを読み込み
+import random
+
 import discord
 
 # アクセストークンを読み込み
@@ -19,14 +22,25 @@ async def on_ready():
 
 
 # メッセージ受信時に動作する処理
-@client.event
-async def on_message(message: discord.Message):
+async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
-    if message.author == client.user:
+    if message.author.bot:
         return
+
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content.startswith("/neko"):
-        await message.channel.send("にゃーん")
+    if message.content == "/meigen":
+        uper = [
+            "これは意味ある、、はず",
+            "わ",
+            "あ、、",
+            "俺も意味わからん",
+            "？ (?)",
+            "。。",
+            "うちは問題ナッシング℣",
+            "pﾌｩﾝｴｪｪﾝ!",
+            "腐",
+        ]
+        await message.channel.send(random.choices(uper, k=1))
 
 
 # Botの起動とDiscordサーバーへの接続
