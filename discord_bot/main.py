@@ -52,6 +52,7 @@ async def on_message(message):
     print(uperrundom)
     if onoff == 1:
         await message.channel.send(uper[int(uperrundom)])
+        return
 
 
 # Botの起動とDiscordサーバーへの接続
