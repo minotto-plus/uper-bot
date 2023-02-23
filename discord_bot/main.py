@@ -43,7 +43,6 @@ async def on_message(message):
     ]
     uperrundom = random.randint(0, 8)
     print(uperrundom)
-    await message.channel.send(uper[uperrundom])
 
 
 # Botの起動とDiscordサーバーへの接続
