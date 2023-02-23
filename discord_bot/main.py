@@ -28,7 +28,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    # 「/neko」と発言したら「にゃーん」が返る処理
+    # 発言したら迷言が返る処理
 
     uper = [
         "これは意味ある、、はず",
