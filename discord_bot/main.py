@@ -41,9 +41,9 @@ async def on_message(message):
         "pﾌｩﾝｴｪｪﾝ!",
         "腐",
     ]
-    uperrundom = random.choices(uper, k=1)
+    uperrundom = random.uniform(0, 8)
     print(uperrundom)
-    await message.channel.send(uperrundom)
+    await message.channel.send(uper[uperrundom])
 
 
 # Botの起動とDiscordサーバーへの接続
