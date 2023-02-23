@@ -28,6 +28,13 @@ async def on_message(message):
     if message.author.bot:
         return
 
+    # on/off
+    if message.content == "!m on":
+        onoff = 1
+
+    if message.content == "!m off":
+        onoff = 0
+
     # 発言したら迷言が返る処理
 
     uper = [
@@ -43,7 +50,8 @@ async def on_message(message):
     ]
     uperrundom = random.randint(0, 8)
     print(uperrundom)
-    await message.channel.send(uper[int(uperrundom)])
+    if onoff == 1:
+        await message.channel.send(uper[int(uperrundom)])
 
 
 # Botの起動とDiscordサーバーへの接続
