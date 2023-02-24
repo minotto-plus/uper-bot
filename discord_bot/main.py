@@ -33,33 +33,18 @@ async def on_message(message):
         return
 
     # on/off
-    # /greet というコマンドで反応する
-    if message.content.startswith("/!m off"):
-        # メッセージが送信されたチャンネルを取得し、`channel` という変数に入れる
-        channel = message.channel
 
-        # チャンネルにメッセージを送信
-        await channel.send("!m on と打つとオフが解除されます")
 
-        # 待っているものに該当するかを確認する関数
-        def check(m):
-            # メッセージが `おはよう` かつ メッセージを送信したチャンネルが
-            # コマンドを打ったチャンネルという条件
-            return m.content == "!m on" and m.channel == channel
+@bot.command()
+@commands.cooldown(2, 10, type=discord.BucketType.user)
+async def hello(ctx):
+    await ctx.send("hello!")
 
-        try:
-            # wait_forを用いて、イベントが発火し指定した条件を満たすまで待機する
-            msg = await client.wait_for("message", check=check, timeout=30)
-            # wait_forの1つ目のパラメータは、イベント名の on_がないもの
-            # 2つ目は、待っているものに該当するかを確認する関数 (任意)
-            # 3つ目は、タイムアウトして asyncio.TimeoutError が発生するまでの秒数
 
-        # asyncio.TimeoutError が発生したらここに飛ぶ
-        except asyncio.TimeoutError:
-            await channel.send("俺タイムアウトでオンになったｗ")
-        else:
-            # メンション付きでメッセージを送信する。
-            await channel.send("オンになったｗｗｗ")
+@bot.event
+async def on_command_error(ctx, err):
+    if isinstance(err, commands.CommandOnCooldown):
+        return await ctx.send("クールダウン中だよ！")
 
     # 発言したら迷言が返る処理
 
