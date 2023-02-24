@@ -55,44 +55,44 @@ async def on_message(message):
 
     if (
         ("?" in message.content)
-        and ("？" in message.content)
-        and ("たん" in message.content)
-        and ("なん" in message.content)
+        or ("？" in message.content)
+        or ("たん" in message.content)
+        or ("なん" in message.content)
     ):
-        uperrundom = random.randint(9, 10)
-        await message.channel.send(uper[int(uperrundom)])
+        uperrandom = random.randint(9, 10)
+        await message.channel.send(uper[int(uperrandom)])
         return
     elif (
         ("​…" in message.content)
-        and ("​・" in message.content)
-        and ("..." in message.content)
-        and ("​。。" in message.content)
+        or ("​・" in message.content)
+        or ("..." in message.content)
+        or ("​。。" in message.content)
     ):
-        uperrundom = random.randint(4, 8)
-        await message.channel.send(uper[int(uperrundom)])
+        uperruadom = random.randint(4, 8)
+        await message.channel.send(uper[int(uperrandom)])
         return
     elif (
         ("​できん" in message.content)
-        and ("​できない" in message.content)
-        and ("むり" in message.content)
+        or ("​できない" in message.content)
+        or ("むり" in message.content)
     ):
-        uperrundom = random.randint(3, 4)
-        await message.channel.send(uper[int(uperrundom)])
+        uperrandom = random.randint(3, 4)
+        await message.channel.send(uper[int(uperrandom)])
         return
     elif (
         ("​できた" in message.content)
-        and ("！" in message.content)
-        and ("ー" in message.content)
+        or ("！" in message.content)
+        or ("ー" in message.content)
     ):
         await message.channel.send(uper[2])
         return
     elif "​謎" in message.content:
-        uperrundom = random.randint(0, 1)
-        await message.channel.send(uper[int(uperrundom)])
+        uperrandom = random.randint(0, 1)
+        await message.channel.send(uper[int(uperrandom)])
         return
     else:
-        uperrundom = random.randint(0, 9)
-        await message.channel.send(uper[int(uperrundom)])
+        uperrandom = random.randint(0, 9)
+        await message.channel.send(uper[int(uperrandom)])
         return
 
 
