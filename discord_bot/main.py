@@ -30,10 +30,10 @@ async def on_message(message):
 
     # on/off
     if message.content == "!m on":
-        overwrite.send_messages = None
+        overwrite.send_messages = True
 
     if message.content == "!m off":
-        overwrite.send_messages = None
+        overwrite.send_messages = False
 
     # 発言したら迷言が返る処理
 
