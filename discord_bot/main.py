@@ -49,8 +49,9 @@ async def on_message(message):
         "うちは問題ナッシング℣",
         "pﾌｩﾝｴｪｪﾝ!",
         "腐",
+        "電",
     ]
-    uperrundom = random.randint(0, 8)
+    uperrundom = random.randint(0, 9)
     print(uperrundom)
     await message.channel.send(uper[int(uperrundom)])
     return
