@@ -13,7 +13,7 @@ intents = discord.Intents.all()
 # 接続に必要なオブジェクトを生成
 client = discord.Client(intents=intents)
 
-overwrite = discord.PermissionOverWrite()
+overwrite = discord.PermissionOverwrite()
 
 
 # 起動時に動作する処理
