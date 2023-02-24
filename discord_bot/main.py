@@ -51,6 +51,7 @@ async def on_message(message):
         "あ、、",
         "そうだよ",
         "？ (?)",
+        "草",
     ]
 
     if (
@@ -90,8 +91,15 @@ async def on_message(message):
         uperrandom = random.randint(0, 1)
         await message.channel.send(uper[int(uperrandom)])
         return
+    elif (
+        ("​草" in message.content)
+        or ("​w" in message.content)
+        or ("ｗ" in message.content)
+    ):
+        await message.channel.send(uper[11])
+        return
     else:
-        uperrandom = random.randint(0, 9)
+        uperrandom = random.randint(0, 11)
         await message.channel.send(uper[int(uperrandom)])
         return
 
