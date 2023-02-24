@@ -41,20 +41,59 @@ async def on_message(message):
 
     uper = [
         "これは意味ある、、はず",
+        "俺も意味わからん",
+        "pﾌｩﾝｴｪｪﾝ!",
+        "うちは問題ナッシング℣",
+        "電",
+        "。。",
+        "腐",
         "わ",
         "あ、、",
-        "俺も意味わからん",
+        "そうだよ",
         "？ (?)",
-        "。。",
-        "うちは問題ナッシング℣",
-        "pﾌｩﾝｴｪｪﾝ!",
-        "腐",
-        "電",
     ]
-    uperrundom = random.randint(0, 9)
-    print(uperrundom)
-    await message.channel.send(uper[int(uperrundom)])
-    return
+
+    if (
+        ("?" in message.content)
+        and ("？" in message.content)
+        and ("たん" in message.content)
+        and ("なん" in message.content)
+    ):
+        uperrundom = random.randint(9, 10)
+        await message.channel.send(uper[int(uperrundom)])
+        return
+    elif (
+        ("​…" in message.content)
+        and ("​・" in message.content)
+        and ("..." in message.content)
+        and ("​。。" in message.content)
+    ):
+        uperrundom = random.randint(4, 8)
+        await message.channel.send(uper[int(uperrundom)])
+        return
+    elif (
+        ("​できん" in message.content)
+        and ("​できない" in message.content)
+        and ("むり" in message.content)
+    ):
+        uperrundom = random.randint(3, 4)
+        await message.channel.send(uper[int(uperrundom)])
+        return
+    elif (
+        ("​できた" in message.content)
+        and ("！" in message.content)
+        and ("ー" in message.content)
+    ):
+        await message.channel.send(uper[2])
+        return
+    elif "​謎" in message.content:
+        uperrundom = random.randint(0, 1)
+        await message.channel.send(uper[int(uperrundom)])
+        return
+    else:
+        uperrundom = random.randint(0, 9)
+        await message.channel.send(uper[int(uperrundom)])
+        return
 
 
 # Botの起動とDiscordサーバーへの接続
