@@ -30,10 +30,10 @@ async def on_message(message):
 
     # on/off
     if message.content == "!m on":
-        onoff = 1
+        overwrite.send_messages = None
 
     if message.content == "!m off":
-        onoff = 0
+        overwrite.send_messages = None
 
     # 発言したら迷言が返る処理
 
@@ -50,9 +50,8 @@ async def on_message(message):
     ]
     uperrundom = random.randint(0, 8)
     print(uperrundom)
-    if onoff == 1:
-        await message.channel.send(uper[int(uperrundom)])
-        return
+    await message.channel.send(uper[int(uperrundom)])
+    return
 
 
 # Botの起動とDiscordサーバーへの接続
